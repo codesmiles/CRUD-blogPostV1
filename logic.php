@@ -15,5 +15,5 @@ if(!$conn){
 //     if($result){
 //         echo "Post added successfully";
 //     }
-// }
+}
 ?>
