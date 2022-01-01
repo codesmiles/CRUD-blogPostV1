@@ -18,10 +18,10 @@ include 'logic.php';
 <body>
     <div class="container mt-5">
         <h3 class="my-5 text-center text-uppercase">Write your blog post</h3>
-        <form action="POST" method="POST">
-            <input type="text" name="title" id="value" placeholder="Blog Title" class="form-control bg-dark text-white py-3">
-            <textarea name="content" id="" class="form-control bg-dark text-white my-3"></textarea>
-            <input type="submit" value="Add Post" class="btn btn-dark">
+        <form method="POST">
+            <input type="text" name="title"  placeholder="Blog Title" class="form-control bg-dark text-white py-3">
+            <textarea name="content"  class="form-control bg-dark text-white my-3"></textarea>
+            <input type="submit" name="add_post" value="Add Post" class="btn btn-dark">
         </form>
     </div>
 
