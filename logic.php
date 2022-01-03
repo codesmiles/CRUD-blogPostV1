@@ -30,4 +30,11 @@ header("location: index.php?info=added");
   exit;
  };
 
+
+ if(isset($_REQUEST['id'])){
+   $id = $_REQUEST['id'];
+
+   $sql = "SELECT * FROM blog where id = $id";
+   $query = mysqli_query($conn, $sql);
+ }
 ?>

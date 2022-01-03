@@ -34,17 +34,20 @@ include 'logic.php';
         </div>
 
         <?php foreach ($query as $q) { ?>
-            <div class="row">
-                <div class="col-4 d-flex justfy-content-center ">
-                    <div class="card text-white bg-dark mt-5 text-center">
-                        <div class="card-body" style="width:18rem;">
-                            <h5 class="card-title"><?php echo $q["title"]; ?></h5>
-                            <p class="card-text"><?php echo $q["content"]; ?></p>
-                            <a href="view.php" class="btn btn-light">read more <span class="text-danger">&rarr;</span></a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 d-flex justfy-content-center ">
+                        <div class="card text-white bg-dark mt-5 text-center">
+                            <div class="card-body" style="width:18rem;">
+                                <h5 class="card-title"><?php echo $q["title"]; ?></h5>
+                                <p class="card-text"><?php echo $q["content"]; ?></p>
+                                <a href="view.php ? info = <?php echo $q["id"]; ?>" class="btn btn-light">read more <span class="text-danger">&rarr;</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         <?php } ?>
     </div>
 
