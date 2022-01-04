@@ -4,6 +4,7 @@ include 'logic.php';
 ?>
 
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,14 +17,27 @@ include 'logic.php';
 
 <body>
     <div class="container">
-<div>
+        <div>
 
-    </div>
-        <?php foreach($query as $q){ ?>
-            <h1><?php echo $q['title']; ?></h1>
-            <p><?php echo $q["content"]?></p>
+        </div>
+        <?php foreach ($query as $q) { ?>
+            <div class="bg-dark p-5 rounded-lg text-white text-center">
+                <h1><?php echo $q['title']; ?></h1>
+                
+                <div class="d-flex mt-2 justify-content-center align-items-center">
+                    <a href="edit.php?id=<?php echo $q["id"]; ?>" class="btn btn-light btn-sm">Edit</a>
 
-        <?php }?>
+
+                    <form method="POST">
+                        <input type="text" hidden name="id" value="<?php echo $q["id"]; ?>" class="">
+                        <button class="btn btn-danger btn-sm ml-2" name="delete">Delete</button>
+                    </form>
+                </div>
+
+            </div>
+            <p class="mt-5 border-left border-dark pt-3 px-3"><?php echo $q["content"] ?></p>
+
+        <?php } ?>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -27,7 +27,17 @@ include 'logic.php';
                     <div class="alert alert-success" role="alert">
                         Post has been added successfully
                     </div>
-                <?php } ?>
+                <?php }elseif($_REQUEST['info'] == 'updated'){ ?>
+                
+                <div class="alert alert-success" role="alert">
+                    Post has been updated successfully
+                </div>
+               <?php } elseif($_REQUEST['info'] == 'deleted'){?>
+
+                <div class="alert alert-danger" role="alert">
+                    Post has been deleted
+                </div>
+                <?php }?>
             <?php } ?>
 
             <a href="create.php" class="btn btn-outline-dark p-2">Create a new post</a>
@@ -41,7 +51,7 @@ include 'logic.php';
                             <div class="card-body" style="width:18rem;">
                                 <h5 class="card-title"><?php echo $q["title"]; ?></h5>
                                 <p class="card-text"><?php echo $q["content"]; ?></p>
-                                <a href="view.php ? info = <?php echo $q["id"]; ?>" class="btn btn-light">read more <span class="text-danger">&rarr;</span></a>
+                                <a href="view.php?id=<?php echo $q["id"]; ?>" class="btn btn-light">read more <span class="text-danger">&rarr;</span></a>
                             </div>
                         </div>
                     </div>

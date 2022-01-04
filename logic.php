@@ -13,6 +13,7 @@ $query = mysqli_query($conn, $sql);
  if(isset($_REQUEST['add_post'])){
     $title = $_REQUEST['title'];
     $content = $_REQUEST['content'];
+    
     $sql = "INSERT INTO blog(title, content) VALUES ('$title', '$content')";
     $result = mysqli_query($conn, $sql);
    
@@ -36,5 +37,30 @@ header("location: index.php?info=added");
 
    $sql = "SELECT * FROM blog where id = $id";
    $query = mysqli_query($conn, $sql);
- }
+ 
+ 
+  };
+
+  if(isset($_REQUEST['update_post'])){
+  $id = $_REQUEST['id'];
+  $title = $_REQUEST['title'];
+  $content = $_REQUEST['content'];
+
+  $sql = "UPDATE blog SET title = '$title', content = '$content' WHERE id = $id";
+  mysqli_query($conn, $sql);
+
+  header("location: index.php?info=updated");
+  exit;
+}
+
+if (isset($_REQUEST['delete'])) {
+  $id = $_REQUEST['id'];
+
+  $sql = "DELETE FROM blog where id = $id";
+  $query = mysqli_query($conn, $sql);
+  
+  header("location: index.php?info=deleted");
+  exit;
+};
+
 ?>
